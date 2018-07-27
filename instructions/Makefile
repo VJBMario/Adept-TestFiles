@@ -42,6 +42,8 @@ $(HEXS): hex/%.hex: bin/%.bin $(BINS)
 		sed '35s/00/80/' $@ > $(subst add,add_trap,$@);\
 	elif [ $@ = "hex/sltu.hex" ]; then\
 		sed '35s/00/80/' $@ > $(subst sltu,sltu_trap,$@);\
+	elif [ $@ = "hex/slt.hex" ]; then\
+		sed '35s/00/80/' $@ > $(subst slt,slt_trap,$@);\
 	fi
 
 clean:
